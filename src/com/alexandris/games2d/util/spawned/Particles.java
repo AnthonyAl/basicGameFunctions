@@ -2,25 +2,20 @@ package com.alexandris.games2d.util.spawned;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Area;
 import java.util.Random;
 
-import com.alexandris.games2d.util.graphics.GameObject;
-import com.alexandris.games2d.util.graphics.Handler;
-import com.alexandris.games2d.util.graphics.ID;
-
-public class Particles extends GameObject {
+public class Particles extends SpawnedObject {
 	
 	Color color;
-	Handler handler;
+	SpawnedHandler handler;
 	Random random = new Random();
 	int size, offset, spawn_offsetX, spawn_offsetY, size_offset, counter, gravityX = 0, gravityY = 0;
 	char shape;
 	double time;
 	
-	public Particles(int x, int y, ID id, Handler handler, Color[] color, int size, int offset, int spawn_offsetX, int spawn_offsetY, int size_offset, double time, int gravityX, int gravityY, char shape) {
+	public Particles(int x, int y, SPAWNED_ID id, SpawnedHandler handler, Color[] color, int size, int offset, int spawn_offsetX, int spawn_offsetY, int size_offset, double time, int gravityX, int gravityY, char shape) {
 		super(x, y, id);
 		if(time < 0) time = 0;
 		if(size < 0) size = 0;

@@ -1,16 +1,16 @@
-package com.alexandris.games2d.util.graphics;
+package com.alexandris.games2d.util.spawned;
 
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-public class Handler {
+public class SpawnedHandler {
 	
-	public LinkedList<GameObject> object = new LinkedList<GameObject>();
+	public LinkedList<SpawnedObject> object = new LinkedList<SpawnedObject>();
 	
 	public void tick() {
 		
 		for(int i = 0; i < object.size(); i++) {
-			GameObject tempObject = object.get(i);
+			SpawnedObject tempObject = object.get(i);
 			
 			tempObject.tick();
 		}	
@@ -18,17 +18,17 @@ public class Handler {
 	
 	public void render(Graphics g) {
 		for(int i = 0; i < object.size(); i++) {
-			GameObject tempObject = object.get(i);
+			SpawnedObject tempObject = object.get(i);
 			
 			tempObject.render(g);
 		}
 	}
 	
-	public void addObject(GameObject object) {
+	public void addObject(SpawnedObject object) {
 		this.object.add(object);
 	}
 	
-	public void removeObject(GameObject object) {
+	public void removeObject(SpawnedObject object) {
 		this.object.remove(object);
 	}
 }
